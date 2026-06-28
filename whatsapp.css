@@ -1,0 +1,354 @@
+/* whatsapp.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'SF Pro Display', sans-serif;
+  background: black;
+  position: relative;
+}
+
+/* HERO */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-image: url('./gedzeb_1 1.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* TOPBAR */
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: rgba(25, 43, 52, 0.15);
+  background-blend-mode: multiply;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.logo {
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.top-icon img {
+  width: 25px;
+}
+
+.top-icon {
+  color: white;
+  font-size: 22px;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#search-input {
+  width: 0;
+  opacity: 0;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-left: 10px;
+}
+
+#search-input.active {
+  width: 220px;
+  opacity: 1;
+}
+
+/* CONTACT WRAPPER (phone number + QR window stacked) */
+
+.contact-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+/* PHONE NUMBER */
+
+.phone-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  color: white;
+  font-size: 18px;
+  font-family: 'SF Pro Display', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.phone-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* QR WINDOW (macOS Preview style) */
+
+.qr-window {
+  width: 480px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  background: rgba(180, 180, 180, 0.35);
+  -webkit-backdrop-filter: blur(28px);
+  backdrop-filter: blur(28px);
+  animation: windowPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes windowPop {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+/* TITLEBAR */
+
+.qr-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  background: rgba(160, 160, 160, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+}
+
+.qr-dots {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.dot:hover { filter: brightness(1.2); }
+
+.dot-red    { background: #ff5f57; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green  { background: #28c840; }
+
+.qr-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 13px;
+  font-family: 'SF Pro Display', sans-serif;
+  white-space: nowrap;
+}
+
+.folder-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  opacity: 0.7;
+}
+
+/* QR BODY */
+
+.qr-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+}
+
+.qr-img {
+  width: 340px;
+  height: 340px;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+}
+
+/* DOCK */
+
+.dock-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+.dock {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dock-item {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.18s ease;
+  transform-origin: bottom;
+  position: relative;
+}
+
+.dock-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dock-item:hover {
+  transform: scale(1.4) translateY(-8px);
+}
+
+/* ACTIVE DOT */
+
+.dock-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: black;
+  opacity: 0.95;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .phone-info {
+    font-size: 15px;
+    padding: 8px 18px;
+  }
+
+  .phone-icon {
+    width: 17px;
+    height: 17px;
+  }
+
+  .qr-window {
+    width: 90vw;
+  }
+
+  .qr-img {
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .dock {
+    gap: 8px;
+  }
+
+  .dock-item {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* DOCK TOOLTIP */
+.dock-label {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(30, 30, 30, 0.88);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white;
+  font-size: 12px;
+  font-family: 'SF Pro Display', sans-serif;
+  padding: 5px 11px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10;
+}
+
+.dock-item:hover .dock-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

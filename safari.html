@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Safari - baruaru.ge</title>
+  <link rel="stylesheet" href="safari.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <img src="./bbbbbbb 1.png" alt="">
+    </a>
+    <div class="top-icons">
+      <div class="top-icon">
+        <img src="./Untitled-1 1.png" alt="">
+      </div>
+      <div class="top-icon">
+        <img src="./Group 4.png" alt="">
+      </div>
+      <div class="search-container">
+        <div class="top-icon" id="search-toggle">
+          <img src="./iconamoon_search.png" alt="">
+        </div>
+        <input type="text" id="search-input" placeholder="Search...">
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / BACKGROUND -->
+  <main class="hero">
+    <div class="overlay"></div>
+
+    <!-- BROWSER WINDOW -->
+    <div class="browser-window">
+
+      <!-- BROWSER CHROME -->
+      <div class="browser-chrome">
+        <div class="browser-nav">
+          <button class="nav-btn" onclick="window.history.back()">&#8592;</button>
+          <button class="nav-btn">&#8594;</button>
+          <button class="nav-btn">&#8635;</button>
+        </div>
+        <div class="address-bar">
+          <span class="lock-icon">🔒</span>
+          <span class="url-text">baruaru.ge</span>
+          <span class="star-icon">☆</span>
+        </div>
+        <div class="browser-actions">
+          <div class="avatar">M</div>
+          <span class="more-btn">⋮</span>
+        </div>
+      </div>
+
+      <!-- BROWSER CONTENT -->
+      <div class="browser-content">
+
+        <div class="content-back">&#8592;</div>
+
+        <!-- LINKTREE BANNER -->
+        <div class="linktree-banner">
+          <img src="./linktree_banner.png" alt="Linktree Banner" class="banner-img">
+          <div class="banner-overlay">
+            <div class="banner-left">
+              <h2 class="banner-title">LINCTREE</h2>
+              <a href="https://linktr.ee/Mariam_gogoladzetitle" class="banner-link" target="_blank">
+                https://linktr.ee/Mariam_gogoladzetitle
+              </a>
+            </div>
+            <div class="banner-qr">
+              <img src="./linktree_qr.png" alt="QR Code" class="banner-qr-img">
+            </div>
+          </div>
+        </div>
+
+        <!-- LINKS LIST -->
+        <div class="links-list">
+
+          <a class="link-item" href="https://www.behance.net/marigogoladze1" target="_blank">
+            <div class="link-icon behance">
+              <img src="./icon_behance.png" alt="Behance">
+            </div>
+            <div class="link-info">
+              <span class="link-name">Behance</span>
+              <span class="link-url">https://www.behance.net/marigogoladze1</span>
+            </div>
+          </a>
+
+          <a class="link-item" href="https://www.instagram.com/baru_aru_art/" target="_blank">
+            <div class="link-icon instagram">
+              <img src="./icon_instagram.png" alt="Instagram">
+            </div>
+            <div class="link-info">
+              <span class="link-name">Instagram</span>
+              <span class="link-url">https://www.instagram.com/baru_aru_art/</span>
+            </div>
+          </a>
+
+          <a class="link-item" href="https://www.artstation.com/mari_g" target="_blank">
+            <div class="link-icon artstation">
+              <img src="./icon_artstation.png" alt="Artstation">
+            </div>
+            <div class="link-info">
+              <span class="link-name">Artstation</span>
+              <span class="link-url">https://www.artstation.com/mari_g</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- DOCK -->
+  <div class="dock-wrapper">
+    <div class="dock">
+
+  <a class="dock-item safari active" href="safari.html">
+  <img src="dock_safari.png">
+  <span class="dock-label"> გამომყევი </span>
+</a>
+
+<a class="dock-item whatsapp" href="whatsapp.html">
+  <img src="dock_whatsapp.png">
+  <span class="dock-label">WhatsApp</span>
+</a>
+
+<a class="dock-item ps" href="ps.html">
+  <img src="dock_ps.png">
+  <span class="dock-label">Photoshop</span>
+</a>
+
+<a class="dock-item ai" href="ai.html">
+  <img src="dock_ai.png">
+  <span class="dock-label">Illustrator</span>
+</a>
+
+<a class="dock-item id" href="id.html">
+  <img src="dock_id.png">
+  <span class="dock-label">InDesign</span>
+</a>
+
+<a class="dock-item figma" href="figma.html">
+  <img src="dock_figma.png">
+  <span class="dock-label">Figma</span>
+</a>
+
+<a class="dock-item blender" href="blender.html">
+  <img src="dock_blender.png">
+  <span class="dock-label">Blender</span>
+</a>
+
+<a class="dock-item notes" href="notes.html">
+  <img src="dock_notes.png">
+  <span class="dock-label">ჩემს შესახებ</span>
+</a>
+
+    </div>
+  </div>
+
+  <script>
+    const searchToggle = document.getElementById("search-toggle");
+    const searchInput  = document.getElementById("search-input");
+    searchToggle.addEventListener("click", () => {
+      searchInput.classList.toggle("active");
+      if (searchInput.classList.contains("active")) searchInput.focus();
+    });
+  </script>
+
+</body>
+</html>

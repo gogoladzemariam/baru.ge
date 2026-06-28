@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photoshop Projects</title>
+  <link rel="stylesheet" href="ps.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- SHARED SVG GRADIENTS FOR THE FOLDER ICONS -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="folderBack" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3fa9e0"/>
+        <stop offset="100%" stop-color="#1c6ea4"/>
+      </linearGradient>
+      <linearGradient id="folderFront" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#7fd4ff"/>
+        <stop offset="100%" stop-color="#3da8e0"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <img src="./bbbbbbb 1.png" alt="">
+    </a>
+    <div class="top-icons">
+      <div class="top-icon">
+        <img src="./Untitled-1 1.png" alt="">
+      </div>
+      <div class="top-icon">
+        <img src="./Group 4.png" alt="">
+      </div>
+      <div class="search-container">
+        <div class="top-icon" id="search-toggle">
+          <img src="./iconamoon_search.png" alt="">
+        </div>
+        <input type="text" id="search-input" placeholder="Search...">
+      </div>
+    </div>
+  </header>
+
+  <!-- NOTIFICATION (Instagram) -->
+  <div class="notification" id="notification" onclick="openInstagram()">
+    <div class="notif-icon instagram">
+     <div class="notif-icon instagram">
+  <img src="icon_instagram.png" alt="Instagram">
+</div>
+    </div>
+    <div class="notif-text">
+      <h4>You can find me on Instagram</h4>
+      <p>https://www.instagram.com/baru_aru_art/</p>
+    </div>
+    <span class="notif-time">now</span>
+  </div>
+
+  <!-- HERO -->
+  <main class="hero">
+    <div class="overlay"></div>
+
+    <!-- FOLDERS -->
+    <div class="folders">
+
+      <a class="folder-item" href="ps-digital-art.html">
+        <svg class="folder-icon" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C2 14.7 4.7 12 8 12 H34 L42 21 H92 C95.3 21 98 23.7 98 27 V68 C98 71.3 95.3 74 92 74 H8 C4.7 74 2 71.3 2 68 Z" fill="url(#folderBack)"/>
+          <path d="M2 27 C2 23.7 4.7 21 8 21 H92 C95.3 21 98 23.7 98 27 V68 C98 71.3 95.3 74 92 74 H8 C4.7 74 2 71.3 2 68 Z" fill="url(#folderFront)"/>
+        </svg>
+        <span>Digital Art</span>
+      </a>
+
+      <a class="folder-item" href="ps-graphic-design.html">
+        <svg class="folder-icon" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 18 C2 14.7 4.7 12 8 12 H34 L42 21 H92 C95.3 21 98 23.7 98 27 V68 C98 71.3 95.3 74 92 74 H8 C4.7 74 2 71.3 2 68 Z" fill="url(#folderBack)"/>
+          <path d="M2 27 C2 23.7 4.7 21 8 21 H92 C95.3 21 98 23.7 98 27 V68 C98 71.3 95.3 74 92 74 H8 C4.7 74 2 71.3 2 68 Z" fill="url(#folderFront)"/>
+        </svg>
+        <span>Graphic Design</span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- DOCK -->
+  <div class="dock-wrapper">
+    <div class="dock">
+<a class="dock-item safari" href="safari.html">
+  <img src="dock_safari.png">
+  <span class="dock-label"> გამომყევი </span>
+</a>
+
+<a class="dock-item whatsapp" href="whatsapp.html">
+  <img src="dock_whatsapp.png">
+  <span class="dock-label">WhatsApp</span>
+</a>
+
+<a class="dock-item ps active" href="ps.html">
+  <img src="dock_ps.png">
+  <span class="dock-label">Photoshop</span>
+</a>
+
+<a class="dock-item ai" href="ai.html">
+  <img src="dock_ai.png">
+  <span class="dock-label">Illustrator</span>
+</a>
+
+<a class="dock-item id" href="id.html">
+  <img src="dock_id.png">
+  <span class="dock-label">InDesign</span>
+</a>
+
+<a class="dock-item figma" href="figma.html">
+  <img src="dock_figma.png">
+  <span class="dock-label">Figma</span>
+</a>
+
+<a class="dock-item blender" href="blender.html">
+  <img src="dock_blender.png">
+  <span class="dock-label">Blender</span>
+</a>
+
+<a class="dock-item notes" href="notes.html">
+  <img src="dock_notes.png">
+  <span class="dock-label">ჩემს შესახებ</span>
+</a>
+
+    </div>
+  </div>
+
+  <script>
+
+    // ── SEARCH ──────────────────────────────────────
+    const searchToggle = document.getElementById("search-toggle");
+    const searchInput  = document.getElementById("search-input");
+    searchToggle.addEventListener("click", () => {
+      searchInput.classList.toggle("active");
+      if (searchInput.classList.contains("active")) searchInput.focus();
+    });
+
+    // ── NOTIFICATION ─────────────────────────────────
+    const notif = document.getElementById("notification");
+
+    setTimeout(() => {
+      notif.classList.add("show");
+    }, 1500);
+
+    setTimeout(() => {
+      notif.classList.add("hide");
+      setTimeout(() => notif.classList.remove("show", "hide"), 400);
+    }, 6000);
+
+    function openInstagram() {
+      window.open("https://www.instagram.com/marigogoladze1", "_blank");
+    }
+
+  </script>
+
+</body>
+</html>
