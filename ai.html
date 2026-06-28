@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Illustrator Projects</title>
+  <link rel="stylesheet" href="ai.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <img src="./bbbbbbb 1.png" alt="">
+    </a>
+    <div class="top-icons">
+      <div class="top-icon">
+        <img src="./Untitled-1 1.png" alt="">
+      </div>
+      <div class="top-icon">
+        <img src="./Group 4.png" alt="">
+      </div>
+      <div class="search-container">
+        <div class="top-icon" id="search-toggle">
+          <img src="./iconamoon_search.png" alt="">
+        </div>
+        <input type="text" id="search-input" placeholder="Search...">
+      </div>
+    </div>
+  </header>
+
+  <!-- NOTIFICATION (Behance) -->
+  <div class="notification" id="notification" onclick="openBehance()">
+    <div class="notif-icon">Bē</div>
+    <div class="notif-text">
+      <h4>You can find me on Behance</h4>
+      <p>www.behance.net/marigogoladze1</p>
+    </div>
+    <span class="notif-time">now</span>
+  </div>
+
+  <!-- HERO -->
+  <main class="hero">
+    <div class="overlay"></div>
+
+    <!-- PROJECTS -->
+    <div class="figma-projects">
+
+      <a class="project project-1" href="#" onclick="openPDF('./ai_1.pdf', 'ai_project_1.pdf'); return false;">
+        <div class="project-thumb">
+          <img src="./ai_thumb_1.png" alt="Illustrator Project 1">
+        </div>
+        <span>ai_project_1.pdf</span>
+      </a>
+
+      <a class="project project-2" href="#" onclick="openPDF('./ai_2.pdf', 'ai_project_2.pdf'); return false;">
+        <div class="project-thumb">
+          <img src="./ai_thumb_2.png" alt="Illustrator Project 2">
+        </div>
+        <span>ai_project_2.pdf</span>
+      </a>
+
+    
+
+    </div>
+  </main>
+
+  <!-- PDF POPUP MODAL -->
+  <div class="pdf-modal" id="pdfModal" onclick="closePDF()">
+    <div class="pdf-modal-window" onclick="event.stopPropagation()">
+
+      <div class="pdf-titlebar">
+        <div class="pdf-dots">
+          <span class="dot dot-red" onclick="closePDF()"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="pdf-title-text" id="pdfModalTitle"></span>
+      </div>
+
+      <div class="pdf-body" id="pdfBody">
+        <iframe id="pdfIframe" class="pdf-iframe" src="" title="PDF Viewer"></iframe>
+      </div>
+
+      <div class="pdf-toolbar">
+        <button class="pdf-toolbar-btn" onclick="scrollPDF(-300)">↑ Up</button>
+        <span class="pdf-page-info" id="pdfPageInfo">Scroll to view</span>
+        <button class="pdf-toolbar-btn" onclick="scrollPDF(300)">↓ Down</button>
+        <button class="pdf-toolbar-btn" onclick="downloadPDF()">⬇ Download</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DOCK -->
+  <div class="dock-wrapper">
+    <div class="dock">
+<a class="dock-item safari" href="safari.html">
+  <img src="dock_safari.png">
+  <span class="dock-label"> გამომყევი </span>
+</a>
+
+<a class="dock-item whatsapp" href="whatsapp.html">
+  <img src="dock_whatsapp.png">
+  <span class="dock-label">WhatsApp</span>
+</a>
+
+<a class="dock-item ps" href="ps.html">
+  <img src="dock_ps.png">
+  <span class="dock-label">Photoshop</span>
+</a>
+
+<a class="dock-item ai active" href="ai.html">
+  <img src="dock_ai.png">
+  <span class="dock-label">Illustrator</span>
+</a>
+
+<a class="dock-item id" href="id.html">
+  <img src="dock_id.png">
+  <span class="dock-label">InDesign</span>
+</a>
+
+<a class="dock-item figma" href="figma.html">
+  <img src="dock_figma.png">
+  <span class="dock-label">Figma</span>
+</a>
+
+<a class="dock-item blender" href="blender.html">
+  <img src="dock_blender.png">
+  <span class="dock-label">Blender</span>
+</a>
+
+<a class="dock-item notes" href="notes.html">
+  <img src="dock_notes.png">
+  <span class="dock-label">ჩემს შესახებ</span>
+</a>
+
+    </div>
+  </div>
+
+  <script>
+
+    const searchToggle = document.getElementById("search-toggle");
+    const searchInput  = document.getElementById("search-input");
+    searchToggle.addEventListener("click", () => {
+      searchInput.classList.toggle("active");
+      if (searchInput.classList.contains("active")) searchInput.focus();
+    });
+
+    const notif = document.getElementById("notification");
+    setTimeout(() => { notif.classList.add("show"); }, 1500);
+    setTimeout(() => {
+      notif.classList.add("hide");
+      setTimeout(() => notif.classList.remove("show", "hide"), 400);
+    }, 6000);
+
+    function openBehance() {
+      window.open("https://www.behance.net/marigogoladze1", "_blank");
+    }
+
+    let currentPDFSrc = "";
+
+    function openPDF(src, name) {
+      currentPDFSrc = src;
+      document.getElementById("pdfIframe").src = src;
+      document.getElementById("pdfModalTitle").textContent = name;
+      document.getElementById("pdfModal").classList.add("open");
+      document.addEventListener("keydown", onEsc);
+    }
+
+    function closePDF() {
+      document.getElementById("pdfModal").classList.remove("open");
+      document.getElementById("pdfIframe").src = "";
+      document.removeEventListener("keydown", onEsc);
+    }
+
+    function onEsc(e) { if (e.key === "Escape") closePDF(); }
+
+    function scrollPDF(amount) {
+      document.getElementById("pdfBody").scrollBy({ top: amount, behavior: "smooth" });
+    }
+
+    function downloadPDF() {
+      if (!currentPDFSrc) return;
+      const a = document.createElement("a");
+      a.href = currentPDFSrc;
+      a.download = currentPDFSrc.split("/").pop();
+      a.click();
+    }
+
+  </script>
+
+</body>
+</html>

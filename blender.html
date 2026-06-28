@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blender Projects</title>
+  <link rel="stylesheet" href="blender.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <img src="./bbbbbbb 1.png" alt="">
+    </a>
+    <div class="top-icons">
+      <div class="top-icon">
+        <img src="./Untitled-1 1.png" alt="">
+      </div>
+      <div class="top-icon">
+        <img src="./Group 4.png" alt="">
+      </div>
+      <div class="search-container">
+        <div class="top-icon" id="search-toggle">
+          <img src="./iconamoon_search.png" alt="">
+        </div>
+        <input type="text" id="search-input" placeholder="Search...">
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero">
+
+    <div class="overlay"></div>
+
+    <!-- PROJECTS -->
+    <div class="blender-projects">
+
+      <a class="project project-1" href="#" onclick="openPhoto('./blender_page_img/blender_1.png.png', 'blender_1.png'); return false;">
+        <img src="./blender_page_img/blender_1.png.png" alt="blender_1">
+        <span>blender_1.png</span>
+      </a>
+
+      <a class="project project-2" href="#" onclick="openPhoto('./blender_page_img/blender_.png', 'blender_2.png'); return false;">
+        <img src="./blender_page_img/blender_.png" alt="blender_2">
+        <span>blender_2.png</span>
+      </a>
+
+      <a class="project project-3" href="#" onclick="openPhoto('./blender_page_img/3.png', 'blender_3.png'); return false;">
+        <img src="./blender_page_img/3.png" alt="blender_3">
+        <span>blender_3.png</span>
+      </a>
+
+      <a class="project project-4" href="#" onclick="openPhoto('./blender_page_img/4.png', 'blender_4.png'); return false;">
+        <img src="./blender_page_img/4.png" alt="blender_4">
+        <span>blender_4.png</span>
+      </a>
+
+      <a class="project project-5" href="#" onclick="openPhoto('./blender_page_img/5.png', 'blender_5.png'); return false;">
+        <img src="./blender_page_img/5.png" alt="blender_5">
+        <span>blender_5.png</span>
+      </a>
+
+      <a class="project project-6" href="#" onclick="openPhoto('./blender_page_img/6.png', 'blender_6.png'); return false;">
+        <img src="./blender_page_img/6.png" alt="blender_6">
+        <span>blender_6.png</span>
+      </a>
+
+    </div>
+
+    <!-- PHOTO POPUP -->
+    <div class="photo-modal" id="photoModal" onclick="closePhoto()">
+      <div class="photo-modal-window" onclick="event.stopPropagation()">
+        <div class="photo-modal-titlebar">
+          <div class="photo-modal-dots">
+            <span class="dot dot-red" onclick="closePhoto()"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="photo-modal-title" id="photoModalTitle"></span>
+        </div>
+        <div class="photo-modal-body">
+          <img id="photoModalImg" src="" alt="">
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- DOCK -->
+  <div class="dock-wrapper">
+    <div class="dock">
+<a class="dock-item safari " href="safari.html">
+  <img src="dock_safari.png">
+  <span class="dock-label"> გამომყევი </span>
+</a>
+
+<a class="dock-item whatsapp" href="whatsapp.html">
+  <img src="dock_whatsapp.png">
+  <span class="dock-label">WhatsApp</span>
+</a>
+
+<a class="dock-item ps" href="ps.html">
+  <img src="dock_ps.png">
+  <span class="dock-label">Photoshop</span>
+</a>
+
+<a class="dock-item ai" href="ai.html">
+  <img src="dock_ai.png">
+  <span class="dock-label">Illustrator</span>
+</a>
+
+<a class="dock-item id" href="id.html">
+  <img src="dock_id.png">
+  <span class="dock-label">InDesign</span>
+</a>
+
+<a class="dock-item figma" href="figma.html">
+  <img src="dock_figma.png">
+  <span class="dock-label">Figma</span>
+</a>
+
+<a class="dock-item blender active" href="blender.html">
+  <img src="dock_blender.png">
+  <span class="dock-label">Blender</span>
+</a>
+
+<a class="dock-item notes" href="notes.html">
+  <img src="dock_notes.png">
+  <span class="dock-label">ჩემს შესახებ</span>
+</a>
+
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    const searchToggle = document.getElementById("search-toggle");
+    const searchInput = document.getElementById("search-input");
+
+    searchToggle.addEventListener("click", () => {
+      searchInput.classList.toggle("active");
+      if (searchInput.classList.contains("active")) searchInput.focus();
+    });
+
+    function openPhoto(src, name) {
+      const modal = document.getElementById("photoModal");
+      const img   = document.getElementById("photoModalImg");
+      const title = document.getElementById("photoModalTitle");
+      img.src   = src;
+      title.textContent = name;
+      modal.classList.add("open");
+      document.addEventListener("keydown", onEsc);
+    }
+
+    function closePhoto() {
+      const modal = document.getElementById("photoModal");
+      modal.classList.remove("open");
+      document.removeEventListener("keydown", onEsc);
+    }
+
+    function onEsc(e) {
+      if (e.key === "Escape") closePhoto();
+    }
+  </script>
+
+</body>
+</html>
