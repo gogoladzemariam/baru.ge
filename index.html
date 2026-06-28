@@ -1,0 +1,130 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BaRu Portfolio</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="logo">
+      <img src="./bbbbbbb 1.png" alt="Logo">
+    </div>
+    <div class="top-icons">
+      <div class="top-icon">
+        <img src="./Untitled-1 1.png" alt="Language">
+      </div>
+      <div class="top-icon">
+        <img src="./Group 4.png" alt="Language">
+      </div>
+      <div class="search-container">
+        <div class="top-icon" id="search-toggle">
+          <img src="./iconamoon_search.png" alt="Search">
+        </div>
+        <input type="text" id="search-input" placeholder="Search...">
+      </div>
+    </div>
+  </header>
+
+  <!-- NOTIFICATION -->
+  <div class="notification" id="notification">
+    <div class="emoji">😊</div>
+    <div>
+      <h4>I appreciate your interest</h4>
+      <p>Here, you can discover more about me and view my work</p>
+    </div>
+    <span class="time">now</span>
+  </div>
+
+  <!-- HERO -->
+  <main class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Portfolio</h1>
+      <h2>Mariam Gogoladze's</h2>
+    </div>
+  </main>
+
+  <!-- DOCK -->
+  <div class="dock-wrapper">
+    <div class="dock">
+      
+      <a class="dock-item safari" href="safari.html">
+        <img src="dock_safari.png">
+        <span class="dock-label">გამომყევი</span>
+      </a>
+
+      <a class="dock-item whatsapp" href="whatsapp.html">
+        <img src="dock_whatsapp.png">
+        <span class="dock-label">WhatsApp</span>
+      </a>
+
+      <div class="divider"></div>
+
+      <a class="dock-item ps" href="ps.html">
+        <img src="dock_ps.png">
+        <span class="dock-label">Photoshop</span>
+      </a>
+
+      <a class="dock-item ai" href="ai.html">
+        <img src="dock_ai.png">
+        <span class="dock-label">Illustrator</span>
+      </a>
+
+      <a class="dock-item id" href="id.html">
+        <img src="dock_id.png">
+        <span class="dock-label">InDesign</span>
+      </a>
+
+      <a class="dock-item figma" href="figma.html">
+        <img src="dock_figma.png">
+        <span class="dock-label">Figma</span>
+      </a>
+
+      <a class="dock-item blender" href="blender.html">
+        <img src="dock_blender.png">
+        <span class="dock-label">Blender</span>
+      </a>
+
+      <div class="divider"></div>
+
+      <a class="dock-item notes" href="notes.html">
+        <img src="dock_notes.png">
+        <span class="dock-label">ჩემს შესახებ</span>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    const searchToggle = document.getElementById("search-toggle");
+    const searchInput = document.getElementById("search-input");
+    searchToggle.addEventListener("click", () => {
+      searchInput.classList.toggle("active");
+      if (searchInput.classList.contains("active")) searchInput.focus();
+    });
+
+    // ── NOTIFICATION ─────────────────────────────────
+    // 1.5 წამში გამოჩება, 6 წამში გაქრება
+    const notif = document.getElementById("notification");
+
+    setTimeout(() => {
+      notif.classList.add("show");
+    }, 1500);
+
+    setTimeout(() => {
+      notif.classList.add("hide");
+      setTimeout(() => notif.classList.remove("show", "hide"), 400);
+    }, 6000);
+  </script>
+
+</body>
+</html>

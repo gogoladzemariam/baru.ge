@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Mariam Gogoladze</title>
+  <link rel="stylesheet" href="notes.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <img src="./bbbbbbb 1.png" alt="">
+    </a>
+    <div class="top-icons">
+      <div class="top-icon">
+        <img src="./Untitled-1 1.png" alt="">
+      </div>
+      <div class="top-icon">
+        <img src="./Group 4.png" alt="">
+      </div>
+      <div class="search-container">
+        <div class="top-icon" id="search-toggle">
+          <img src="./iconamoon_search.png" alt="">
+        </div>
+        <input type="text" id="search-input" placeholder="Search...">
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero">
+    <div class="overlay"></div>
+
+    <!-- CV WINDOW -->
+    <div class="cv-window">
+
+      <!-- TITLEBAR -->
+      <div class="cv-titlebar">
+        <div class="cv-dots">
+          <span class="dot dot-red" onclick="window.history.back()"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="cv-title-text">Mariam_Gogoladze_CV.pdf</span>
+      </div>
+
+      <!-- BODY -->
+      <div class="cv-body">
+        <img src="./y.png" alt="Mariam Gogoladze CV" class="cv-img">
+      </div><!-- /cv-body -->
+    </div><!-- /cv-window -->
+
+  </main>
+
+  <!-- DOCK -->
+  <div class="dock-wrapper">
+    <div class="dock">
+
+     <a class="dock-item safari" href="safari.html">
+  <img src="dock_safari.png">
+  <span class="dock-label"> გამომყევი </span>
+</a>
+
+<a class="dock-item whatsapp" href="whatsapp.html">
+  <img src="dock_whatsapp.png">
+  <span class="dock-label">WhatsApp</span>
+</a>
+
+<a class="dock-item ps" href="ps.html">
+  <img src="dock_ps.png">
+  <span class="dock-label">Photoshop</span>
+</a>
+
+<a class="dock-item ai" href="ai.html">
+  <img src="dock_ai.png">
+  <span class="dock-label">Illustrator</span>
+</a>
+
+<a class="dock-item id" href="id.html">
+  <img src="dock_id.png">
+  <span class="dock-label">InDesign</span>
+</a>
+
+<a class="dock-item figma" href="figma.html">
+  <img src="dock_figma.png">
+  <span class="dock-label">Figma</span>
+</a>
+
+<a class="dock-item blender" href="blender.html">
+  <img src="dock_blender.png">
+  <span class="dock-label">Blender</span>
+</a>
+
+<a class="dock-item notes active" href="notes.html">
+  <img src="dock_notes.png">
+  <span class="dock-label">ჩემს შესახებ</span>
+</a>
+
+    </div>
+  </div>
+
+  <script>
+    const searchToggle = document.getElementById("search-toggle");
+    const searchInput  = document.getElementById("search-input");
+    searchToggle.addEventListener("click", () => {
+      searchInput.classList.toggle("active");
+      if (searchInput.classList.contains("active")) searchInput.focus();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graphic Design — Photoshop</title>
+  <link rel="stylesheet" href="ps.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <a href="index.html" class="logo">
+      <img src="./bbbbbbb 1.png" alt="">
+    </a>
+    <div class="top-icons">
+      <div class="top-icon">
+        <img src="./Untitled-1 1.png" alt="">
+      </div>
+      <div class="top-icon">
+        <img src="./Group 4.png" alt="">
+      </div>
+      <div class="search-container">
+        <div class="top-icon" id="search-toggle">
+          <img src="./iconamoon_search.png" alt="">
+        </div>
+        <input type="text" id="search-input" placeholder="Search...">
+      </div>
+    </div>
+  </header>
+
+  <!-- NOTIFICATION (Instagram) -->
+  <div class="notification" id="notification" onclick="openInstagram()">
+    <div class="notif-icon instagram">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="1.8"/>
+        <circle cx="12" cy="12" r="4.2" stroke="white" stroke-width="1.8"/>
+        <circle cx="17.2" cy="6.8" r="1.1" fill="white"/>
+      </svg>
+    </div>
+    <div class="notif-text">
+      <h4>You can find me on Instagram</h4>
+      <p>www.instagram.com/marigogoladze1</p>
+    </div>
+    <span class="notif-time">now</span>
+  </div>
+
+  <!-- HERO -->
+  <main class="hero">
+    <div class="overlay"></div>
+
+    <a class="back-btn" href="ps.html">← Graphic Design</a>
+
+    <!-- PROJECTS — fixed-size scattered thumbnails, like blender.html -->
+    <div class="ps-projects">
+
+      <a class="project project-1" href="#" onclick="openImage(this.querySelector('img')); return false;">
+        <img src="graphic_design/graphic_design_1.jpg" alt="Graphic Design 1">
+        <span>Graphic Design 1</span>
+      </a>
+
+      <a class="project project-2" href="#" onclick="openImage(this.querySelector('img')); return false;">
+        <img src="graphic_design/graphic_design_2.jpg" alt="Graphic Design 2">
+        <span>Graphic Design 2</span>
+      </a>
+
+      <a class="project project-3" href="#" onclick="openImage(this.querySelector('img')); return false;">
+        <img src="graphic_design/graphic_design_3.jpg" alt="Graphic Design 3">
+        <span>Graphic Design 3</span>
+      </a>
+
+      <a class="project project-4" href="#" onclick="openImage(this.querySelector('img')); return false;">
+        <img src="graphic_design/graphic_design_4.jpg" alt="Graphic Design 4">
+        <span>Graphic Design 4</span>
+      </a>
+
+      <a class="project project-5" href="#" onclick="openImage(this.querySelector('img')); return false;">
+        <img src="graphic_design/graphic_design_5.jpg" alt="Graphic Design 5">
+        <span>Graphic Design 5</span>
+      </a>
+
+      <a class="project project-6" href="#" onclick="openImage(this.querySelector('img')); return false;">
+        <img src="graphic_design/graphic_design_6.jpg" alt="Graphic Design 6">
+        <span>Graphic Design 6</span>
+      </a>
+
+      <a class="project project-7" href="#" onclick="openImage(this.querySelector('img')); return false;">
+        <img src="graphic_design/graphic_design_7.jpg" alt="Graphic Design 7">
+        <span>Graphic Design 7</span>
+      </a>
+
+      <a class="project project-8" href="#" onclick="openImage(this.querySelector('img')); return false;">
+        <img src="graphic_design/graphic_design_8.jpg" alt="Graphic Design 8">
+        <span>Graphic Design 8</span>
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- IMAGE POPUP MODAL -->
+  <div class="img-modal" id="imgModal" onclick="closeImage()">
+    <div class="img-modal-window" onclick="event.stopPropagation()">
+
+      <!-- TITLEBAR -->
+      <div class="img-titlebar">
+        <div class="img-dots">
+          <span class="dot dot-red" onclick="closeImage()"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="img-title-text" id="imgModalTitle"></span>
+      </div>
+
+      <!-- IMAGE -->
+      <div class="img-body">
+        <img id="imgModalPhoto" src="" alt="">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DOCK -->
+  <div class="dock-wrapper">
+    <div class="dock">
+
+<a class="dock-item safari" href="safari.html">
+  <img src="dock_safari.png">
+  <span class="dock-label"> გამომყევი </span>
+</a>
+
+<a class="dock-item whatsapp" href="whatsapp.html">
+  <img src="dock_whatsapp.png">
+  <span class="dock-label">WhatsApp</span>
+</a>
+
+<a class="dock-item ps active" href="ps.html">
+  <img src="dock_ps.png">
+  <span class="dock-label">Photoshop</span>
+</a>
+
+<a class="dock-item ai" href="ai.html">
+  <img src="dock_ai.png">
+  <span class="dock-label">Illustrator</span>
+</a>
+
+<a class="dock-item id" href="id.html">
+  <img src="dock_id.png">
+  <span class="dock-label">InDesign</span>
+</a>
+
+<a class="dock-item figma" href="figma.html">
+  <img src="dock_figma.png">
+  <span class="dock-label">Figma</span>
+</a>
+
+<a class="dock-item blender" href="blender.html">
+  <img src="dock_blender.png">
+  <span class="dock-label">Blender</span>
+</a>
+
+<a class="dock-item notes" href="notes.html">
+  <img src="dock_notes.png">
+  <span class="dock-label">ჩემს შესახებ</span>
+</a>
+
+    </div>
+  </div>
+
+  <script>
+
+    // ── SEARCH ──────────────────────────────────────
+    const searchToggle = document.getElementById("search-toggle");
+    const searchInput  = document.getElementById("search-input");
+    searchToggle.addEventListener("click", () => {
+      searchInput.classList.toggle("active");
+      if (searchInput.classList.contains("active")) searchInput.focus();
+    });
+
+    // ── NOTIFICATION ─────────────────────────────────
+    const notif = document.getElementById("notification");
+
+    setTimeout(() => {
+      notif.classList.add("show");
+    }, 1500);
+
+    setTimeout(() => {
+      notif.classList.add("hide");
+      setTimeout(() => notif.classList.remove("show", "hide"), 400);
+    }, 6000);
+
+    function openInstagram() {
+      window.open("https://www.instagram.com/marigogoladze1", "_blank");
+    }
+
+    // ── IMAGE MODAL ──────────────────────────────────
+    // .src ელემენტიდან პირდაპირ იკითხება, რომ path-ი არასდროს გატყდეს
+    function openImage(imgEl) {
+      const modal    = document.getElementById("imgModal");
+      const modalImg = document.getElementById("imgModalPhoto");
+      const title    = document.getElementById("imgModalTitle");
+
+      modalImg.src = imgEl.src;
+      modalImg.alt = imgEl.alt;
+      title.textContent = imgEl.alt;
+
+      modal.classList.add("open");
+      document.addEventListener("keydown", onEscImg);
+    }
+
+    function closeImage() {
+      const modal    = document.getElementById("imgModal");
+      const modalImg = document.getElementById("imgModalPhoto");
+      modal.classList.remove("open");
+      modalImg.src = "";
+      document.removeEventListener("keydown", onEscImg);
+    }
+
+    function onEscImg(e) {
+      if (e.key === "Escape") closeImage();
+    }
+
+  </script>
+
+</body>
+</html>
